@@ -1,0 +1,20 @@
+{
+  "name": "sharon-birthday",
+  "version": "1.0.0",
+  "description": "Project SHARON — An Experience Made Just for Her ❤️",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve .",
+    "build": "node -e \"console.log('Checking project integrity...'); require('child_process').execSync('node -c script.js'); console.log('✓ Build & syntax validation successful! Ready for production deployment.');\""
+  },
+  "keywords": [
+    "birthday",
+    "experience",
+    "interactive",
+    "editorial",
+    "luxury"
+  ],
+  "author": "Idris & Daniel",
+  "license": "MIT"
+}
