@@ -482,41 +482,22 @@ function handleSceneEntry(sceneNumber) {
   }
 }
 
-// LocalStorage Persistence
-function saveProgress() {
+// Fresh Experience on Reload (Cache Cleared)
+function clearProgressCache() {
   try {
-    const saveObj = {
-      highestUnlocked: state.highestUnlocked,
-      currentScene: state.currentScene,
-      vaultUnlocked: state.vaultUnlocked,
-      readLetters: state.readLetters
-    };
-    localStorage.setItem("sharon_experience_save", JSON.stringify(saveObj));
-  } catch (e) {
-    // ignore in private browsing
-  }
+    localStorage.removeItem("sharon_experience_save");
+    sessionStorage.clear();
+  } catch (e) {}
+}
+
+function saveProgress() {
+  // Session progression only - reloads restart afresh
 }
 
 function loadSavedProgress() {
-  try {
-    const saved = localStorage.getItem("sharon_experience_save");
-    if (saved) {
-      const parsed = JSON.parse(saved);
-      if (parsed.highestUnlocked) state.highestUnlocked = parsed.highestUnlocked;
-      if (parsed.vaultUnlocked) {
-        state.vaultUnlocked = true;
-        document.getElementById("vaultChamberContent")?.classList.remove("hidden");
-        document.getElementById("vaultTerminal")?.classList.add("hidden");
-        document.getElementById("vaultStatusText").textContent = "VAULT UNLOCKED · ACCESS GRANTED";
-      }
-      if (parsed.readLetters) {
-        state.readLetters = parsed.readLetters;
-        if (state.readLetters.idris) markLetterCardRead("idris");
-        if (state.readLetters.daniel) markLetterCardRead("daniel");
-        checkBothLettersRead();
-      }
-    }
-  } catch (e) {}
+  clearProgressCache();
+  state.currentScene = 1;
+  state.highestUnlocked = 1;
 }
 
 
@@ -933,6 +914,20 @@ if (chapterTracker && chapterDropdown) {
 if (audioToggleBtn) {
   audioToggleBtn.addEventListener("click", toggleAudio);
 }
+
+// Prevent accidental mobile double-tap zoom & pinch-to-zoom
+let lastTouchEndTime = 0;
+document.addEventListener('touchend', (event) => {
+  const now = Date.now();
+  if (now - lastTouchEndTime <= 300) {
+    event.preventDefault();
+  }
+  lastTouchEndTime = now;
+}, { passive: false });
+
+document.addEventListener('gesturestart', (e) => e.preventDefault());
+document.addEventListener('gesturechange', (e) => e.preventDefault());
+document.addEventListener('gestureend', (e) => e.preventDefault());
 
 // Keyboard shortcuts (Escape to close modals)
 window.addEventListener("keydown", (e) => {
