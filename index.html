@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>For Sharon, With Love ❤️ | An Experience Made Just for Her</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
+
+  <!-- Google Fonts: Cormorant Garamond & DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="experience-body">
+
+  <!-- Ambient Golden Particle Canvas -->
+  <canvas id="ambientCanvas" class="ambient-canvas"></canvas>
+
+  <!-- Confetti Canvas for Celebration -->
+  <canvas id="confettiCanvas" class="confetti-canvas"></canvas>
+
+  <!-- Mega Celebration Toast -->
+  <div id="megaConfettiToast" class="mega-confetti-toast">✨ MEGA CELEBRATION UNLEASHED! 🎉🍾👑</div>
+
+  <!-- Sound & Ambient Audio Controller Bar -->
+  <header class="top-nav-bar" id="topNavBar">
+    <div class="nav-brand">
+      <span class="nav-monogram">S</span>
+      <span class="nav-title">The Sharon Experience</span>
+    </div>
+
+    <!-- Chapter Progression Tracker -->
+    <div class="chapter-tracker" id="chapterTracker">
+      <div class="chapter-label">
+        <span class="current-chapter-num" id="currentChapterNum">01</span>
+        <span class="chapter-divider">/</span>
+        <span class="total-chapter-num">09</span>
+      </div>
+      <span class="chapter-name" id="currentChapterName">The Invitation</span>
+      <!-- Quick Chapter Dropdown for Re-visiting Unlocked Chapters -->
+      <button class="chapter-menu-btn" id="chapterMenuBtn" aria-label="Open chapters list" title="Jump to unlocked scene">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="1"></circle>
+          <circle cx="12" cy="5" r="1"></circle>
+          <circle cx="12" cy="19" r="1"></circle>
+        </svg>
+      </button>
+      <div class="chapter-dropdown" id="chapterDropdown">
+        <div class="dropdown-header">Story Chapters</div>
+        <ul class="chapter-list" id="chapterList">
+          <!-- Populated dynamically via JS -->
+        </ul>
+      </div>
+    </div>
+
+    <!-- Audio & Ambient Toggle -->
+    <div class="nav-controls">
+      <button class="audio-toggle-btn" id="audioToggleBtn" title="Toggle soothing ambient music">
+        <span class="audio-icon" id="audioIcon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+          </svg>
+        </span>
+        <span class="audio-label" id="audioLabel">Music: Off</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Experience Wrapper (9 Scenes) -->
+  <main class="experience-container" id="experienceContainer">
+
+    <!-- ==========================================
+         SCENE 01: THE MYSTERIOUS INVITATION
+         ========================================== -->
+    <section class="scene scene-invitation active" id="scene-1" data-scene="1" data-title="The Invitation">
+      <div class="scene-inner">
+        <div class="editorial-badge">Private Delivery · London & Worldwide</div>
+        <p class="subtle-pretitle">An invitation, exclusively for you.</p>
+        <h1 class="hero-title serif">For Sharon.</h1>
+        <p class="invitation-tagline">Some things are better experienced than explained.</p>
+
+        <!-- Interactive Luxury Envelope -->
+        <div class="envelope-wrapper" id="envelopeWrapper">
+          <div class="envelope" id="envelope">
+            <div class="envelope-front">
+              <div class="envelope-flap" id="envelopeFlap"></div>
+              <div class="wax-seal" id="waxSeal" title="Tap to break wax seal">
+                <span class="seal-letter">S</span>
+                <span class="seal-ring"></span>
+              </div>
+              <div class="envelope-letter-preview">
+                <span class="letter-top-text">Exclusively For Sharon</span>
+              </div>
+            </div>
+          </div>
+          <p class="envelope-hint">Tap the golden wax seal or button below</p>
+        </div>
+
+        <div class="action-row">
+          <button class="luxury-btn gold-glow-btn" id="openInvitationBtn">
+            <span class="btn-text">Open Your Invitation</span>
+            <span class="btn-icon">✦</span>
+          </button>
+        </div>
+
+        <div class="invitation-signature">
+          <span>With love, I &amp; D</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         SCENE 02: THE FIRST REVEAL
+         ========================================== -->
+    <section class="scene scene-reveal" id="scene-2" data-scene="2" data-title="The First Reveal">
+      <div class="scene-inner text-center">
+        <div class="reveal-sequence" id="revealSequence">
+          <div class="reveal-step step-1" id="revealStep1">
+            <span class="golden-asterisk">✦</span>
+            <h2 class="cinematic-phrase serif">Today isn't an ordinary day.</h2>
+          </div>
+
+          <div class="reveal-step step-2" id="revealStep2">
+            <p class="cinematic-subphrase">Because someone extraordinary was born.</p>
+          </div>
+
+          <div class="reveal-step step-3" id="revealStep3">
+            <div class="floral-ornament">
+              <span>❧</span> ✦ <span>☙</span>
+            </div>
+            <h1 class="grand-birthday-title serif">HAPPY BIRTHDAY, SHARON.</h1>
+            <div class="gold-accent-line"></div>
+            <p class="reveal-subtext">
+              Before the rest of the celebrations begin, there are a few very special things we need you to know...
+            </p>
+            <button class="luxury-btn gold-glow-btn" id="btnRevealNext">
+              <span>There's more to your story</span>
+              <span class="arrow-icon">→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         SCENE 03: THE WOMAN WE KNOW
+         ========================================== -->
+    <section class="scene scene-personality" id="scene-3" data-scene="3" data-title="The Woman We Know">
+      <div class="scene-inner">
+        <div class="scene-header">
+          <span class="chapter-kicker">CHAPTER 03</span>
+          <h2 class="scene-title serif">Sharon, Through Our Eyes.</h2>
+          <p class="scene-subtitle">Some people are remembered for what they say. Others, for how they make people feel.</p>
+          <p class="tap-hint">Tap each card below to unlock our perspective</p>
+        </div>
+
+        <div class="personality-grid" id="personalityGrid">
+          <!-- Card 1 -->
+          <div class="personality-card" data-card="1">
+            <div class="card-glow"></div>
+            <div class="card-inner">
+              <div class="card-number">01</div>
+              <div class="card-badge">Drive &amp; Purpose</div>
+              <h3 class="card-title serif">The Go-Getter</h3>
+              <div class="card-icon">⚡</div>
+              <p class="card-hidden-content">
+                "You have always been someone who sees possibilities and goes after them without waiting for permission."
+              </p>
+              <div class="card-status-indicator">
+                <span class="tap-to-reveal">Tap to reveal</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="personality-card" data-card="2">
+            <div class="card-glow"></div>
+            <div class="card-inner">
+              <div class="card-number">02</div>
+              <div class="card-badge">Grace &amp; Autonomy</div>
+              <h3 class="card-title serif">The Independent Queen</h3>
+              <div class="card-icon">👑</div>
+              <p class="card-hidden-content">
+                "Even when life gives you a head start, you're determined to build something of your own from the ground up."
+              </p>
+              <div class="card-status-indicator">
+                <span class="tap-to-reveal">Tap to reveal</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="personality-card" data-card="3">
+            <div class="card-glow"></div>
+            <div class="card-inner">
+              <div class="card-number">03</div>
+              <div class="card-badge">Care &amp; Loyalty</div>
+              <h3 class="card-title serif">Our Super Mom</h3>
+              <div class="card-icon">🤍</div>
+              <p class="card-hidden-content">
+                "Somehow, no matter what storm you are navigating, you are always making sure everyone around you is doing okay."
+              </p>
+              <div class="card-status-indicator">
+                <span class="tap-to-reveal">Tap to reveal</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="personality-card" data-card="4">
+            <div class="card-glow"></div>
+            <div class="card-inner">
+              <div class="card-number">04</div>
+              <div class="card-badge">Ambition &amp; Heart</div>
+              <h3 class="card-title serif">The Woman Who Builds</h3>
+              <div class="card-icon">🏛️</div>
+              <p class="card-hidden-content">
+                "Your courage, consistency, and vision deserve to be celebrated today and every single day after."
+              </p>
+              <div class="card-status-indicator">
+                <span class="tap-to-reveal">Tap to reveal</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="personality-footer" id="personalityFooter">
+          <p class="progress-note" id="cardsUnlockedNote">0 of 4 traits discovered</p>
+          <button class="luxury-btn gold-glow-btn disabled" id="btnPersonalityNext">
+            <span>Now, let's tell you why</span>
+            <span class="arrow-icon">→</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         SCENE 04: TWO STORIES, ONE SHARON
+         ========================================== -->
+    <section class="scene scene-letters" id="scene-4" data-scene="4" data-title="Two Letters">
+      <div class="scene-inner">
+        <div class="scene-header">
+          <span class="chapter-kicker">CHAPTER 04 · THE EMOTIONAL CENTERPIECE</span>
+          <h2 class="scene-title serif">Two Stories. One Extraordinary Person.</h2>
+          <p class="scene-subtitle">Different beginnings. The very same gratitude.</p>
+        </div>
+
+        <div class="letters-selection-container">
+          <!-- Idris's Letter Card -->
+          <div class="letter-capsule" id="letterCapsuleIdris">
+            <div class="letter-card-seal">
+              <span class="letter-initial">I</span>
+            </div>
+            <span class="letter-origin">377 Days &amp; Counting</span>
+            <h3 class="letter-sender serif">From Idris</h3>
+            <p class="letter-preview-text">"Heyyyyyyyyyy, Gurlllllllllllllllllll – Super Mom! 😝❤️ We've known each other for 377 days..."</p>
+            <div class="letter-read-status" id="statusIdris">Sealed · Tap to read</div>
+            <button class="read-letter-btn" id="openIdrisLetterBtn">
+              <span>Read Idris's Letter</span>
+              <span class="paper-icon">📜</span>
+            </button>
+          </div>
+
+          <!-- Daniel's Letter Card -->
+          <div class="letter-capsule" id="letterCapsuleDaniel">
+            <div class="letter-card-seal">
+              <span class="letter-initial">D</span>
+            </div>
+            <span class="letter-origin">From Childhood, With Love</span>
+            <h3 class="letter-sender serif">From Daniel</h3>
+            <p class="letter-preview-text">"To my girl, my childhood blessing, and one of life's sweetest gifts to me. Happy birthday, Sharon..."</p>
+            <div class="letter-read-status" id="statusDaniel">Sealed · Tap to read</div>
+            <button class="read-letter-btn" id="openDanielLetterBtn">
+              <span>Read Daniel's Letter</span>
+              <span class="paper-icon">📜</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="letters-completion-notice" id="lettersCompletionNotice">
+          <p class="letters-complete-tag">Two different journeys. One amazing Sharon.</p>
+          <button class="luxury-btn gold-glow-btn" id="btnLettersNext">
+            <span>Continue the celebration</span>
+            <span class="arrow-icon">→</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         SCENE 05: THE SHAZBEAUTY SPOTLIGHT
+         ========================================== -->
+    <section class="scene scene-shazbeauty" id="scene-5" data-scene="5" data-title="The ShazBeauty Chapter">
+      <div class="scene-inner">
+        <div class="editorial-banner">
+          <span class="badge-gold">MAGAZINE EDITORIAL</span>
+          <span class="badge-edition">SPECIAL BIRTHDAY ISSUE · SHAZBEAUTY SPECIAL</span>
+        </div>
+
+        <div class="shazbeauty-hero">
+          <span class="shazbeauty-kicker">THE SHAZBEAUTY CHAPTER</span>
+          <h2 class="shazbeauty-headline serif">She Doesn't Just Dream.<br><em>She Builds.</em></h2>
+          <div class="editorial-divider"></div>
+          <p class="shazbeauty-quote">
+            "Behind every beautiful achievement is someone brave enough to begin, strong enough to continue, and determined enough to grow."
+          </p>
+        </div>
+
+        <!-- Editorial Grid Layout -->
+        <div class="shazbeauty-editorial-grid">
+          <!-- Left Column: The Founder Portrait & Media Gallery Showcase -->
+          <div class="editorial-column visual-column">
+            <div class="editorial-photo-frame" id="shazbeautyPhotoFrame">
+              <div class="frame-tag">FOUNDER &amp; VISIONARY</div>
+              <div class="frame-image-wrapper">
+                <img src="public/sharon-ceo.jpeg" alt="Sharon — Founder &amp; Visionary" class="editorial-img" id="founderImagePlaceholder">
+                <div class="photo-overlay-caption">
+                  <span class="overlay-brand">SHAZBEAUTY</span>
+                  <span class="overlay-subtitle">Grace · Vision · Elegance</span>
+                </div>
+              </div>
+              <div class="frame-corner corner-tl"></div>
+              <div class="frame-corner corner-tr"></div>
+              <div class="frame-corner corner-bl"></div>
+              <div class="frame-corner corner-br"></div>
+            </div>
+          </div>
+
+          <!-- Right Column: Editorial Narrative & Values -->
+          <div class="editorial-column narrative-column">
+            <div class="brand-monogram-badge">
+              <span class="brand-crest">SB</span>
+            </div>
+            <h3 class="narrative-heading serif">The Essence of ShazBeauty</h3>
+            <p class="narrative-text">
+              Seeing you build ShazBeauty and watching it mark another year of growth is a testament to what unwavering faith and hard work can achieve. You didn’t settle for the easy path or rely on privilege—you chose to pour your heart, long nights, and unmatched creativity into crafting your own signature.
+            </p>
+            <p class="narrative-text">
+              From every client who feels elevated, to every milestone reached, you carry a standard of pure class. We stand with you today celebrating every drop of sweat, every brave leap, and every victory that got you right here.
+            </p>
+
+            <div class="editorial-pillars">
+              <div class="pillar-item">
+                <span class="pillar-symbol">✦</span>
+                <div>
+                  <h4>Courage</h4>
+                  <p>Daring to launch and stand distinct in the beauty world.</p>
+                </div>
+              </div>
+              <div class="pillar-item">
+                <span class="pillar-symbol">✦</span>
+                <div>
+                  <h4>Consistency</h4>
+                  <p>Showing up with excellence, rain or shine.</p>
+                </div>
+              </div>
+              <div class="pillar-item">
+                <span class="pillar-symbol">✦</span>
+                <div>
+                  <h4>Uncompromising Vision</h4>
+                  <p>Building an empire with grace and authenticity.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="editorial-affirmation">
+              <p>"Your story is still being written. And we're proud of every single chapter."</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="action-row text-center mt-xl">
+          <button class="luxury-btn gold-glow-btn" id="btnShazbeautyNext">
+            <span>Continue To The Laughs</span>
+            <span class="arrow-icon">→</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         SCENE 06: THE FUNNY LITTLE THINGS
+         ========================================== -->
+    <section class="scene scene-funny" id="scene-6" data-scene="6" data-title="The Funny Little Things">
+      <div class="scene-inner">
+        <div class="scene-header">
+          <span class="chapter-kicker">CHAPTER 06 · INSIDE JOKES &amp; GIGGLES</span>
+          <h2 class="scene-title serif">Okay, Enough Seriousness. 😂</h2>
+          <p class="scene-subtitle">Because what is genuine friendship without plenty of affectionate banter?</p>
+        </div>
+
+        <div class="funny-cards-grid">
+          <!-- Funny Card 1 -->
+          <div class="funny-card" data-card-id="1">
+            <div class="funny-header">
+              <span class="funny-emoji">😂</span>
+              <span class="funny-pill">Inside Joke #1</span>
+            </div>
+            <h3 class="funny-title serif">Nepo Baby Privilege</h3>
+            <p class="funny-body">Opportunities? Plenty. Independence? Non-negotiable! You could chill, but you're out here hustling like you owe the world money!</p>
+            <button class="funny-card-btn" data-reaction="She said: 'I must build my own empire!' 😂">Tap for Truth</button>
+          </div>
+
+          <!-- Funny Card 2 -->
+          <div class="funny-card" data-card-id="2">
+            <div class="funny-header">
+              <span class="funny-emoji">😭</span>
+              <span class="funny-pill">Inside Joke #2</span>
+            </div>
+            <h3 class="funny-title serif">Daniel's Big Head</h3>
+            <p class="funny-body">"Ever since we met, you are always looking out for me and that Big Head (Daniel) 😭." Somebody genuinely had to supervise him!</p>
+            <button class="funny-card-btn" data-reaction="Daniel is currently offended but agreeing in secret 💀">Tap for Truth</button>
+          </div>
+
+          <!-- Funny Card 3 -->
+          <div class="funny-card" data-card-id="3">
+            <div class="funny-header">
+              <span class="funny-emoji">🚗</span>
+              <span class="funny-pill">Inside Joke #3</span>
+            </div>
+            <h3 class="funny-title serif">The Car Era</h3>
+            <p class="funny-body">Look at her cruising in that fine new ride! Big congratulations Super Mom—may the garage keep expanding with Maybachs and luxury keys!</p>
+            <button class="funny-card-btn" data-reaction="Vroom vroom! The next car must have a private chauffeur! 🏎️">Tap for Truth</button>
+          </div>
+
+          <!-- Funny Card 4 -->
+          <div class="funny-card" data-card-id="4">
+            <div class="funny-header">
+              <span class="funny-emoji">😹</span>
+              <span class="funny-pill">Inside Joke #4</span>
+            </div>
+            <h3 class="funny-title serif">Operation Party Jollof</h3>
+            <p class="funny-body">We are still actively waiting for that wedding rice o! May God bring that caring, lovable partner so we can dress up and eat party jollof!</p>
+            <button class="funny-card-btn" data-reaction="We have already bought our Aso Ebi outfits in advance! 🍚🔥">Tap for Truth</button>
+          </div>
+        </div>
+
+        <!-- Interactive Reaction Counter Button -->
+        <div class="playful-interaction-area">
+          <p class="joke-toast" id="jokeToastMessage">Tap the cards above or test Sharon's patience below!</p>
+          <div class="funny-button-wrapper">
+            <button class="fun-reaction-btn" id="abegButton">
+              <span>Abeg, Leave Me Alone! 😂</span>
+              <span class="click-badge" id="abegCount">0</span>
+            </button>
+          </div>
+          <p class="subtle-note">Sharon's Official Eye Roll Meter</p>
+        </div>
+
+        <div class="action-row text-center mt-xl">
+          <button class="luxury-btn gold-glow-btn" id="btnFunnyNext">
+            <span>Receive Your Birthday Prayers</span>
+            <span class="arrow-icon">→</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         SCENE 07: A THOUSAND GOOD WISHES
+         ========================================== -->
+    <section class="scene scene-wishes" id="scene-7" data-scene="7" data-title="A Thousand Wishes">
+      <div class="scene-inner">
+        <div class="scene-header">
+          <span class="chapter-kicker">CHAPTER 07 · HEAVENLY BLESSINGS</span>
+          <h2 class="scene-title serif">If We Could Wish You Everything...</h2>
+          <p class="scene-subtitle">We would begin right here with these heartfelt prayers.</p>
+          <p class="tap-hint">Tap each heavenly blessing to unlock its prayer</p>
+        </div>
+
+        <div class="wishes-list" id="wishesList">
+          <!-- Wish 1 -->
+          <div class="wish-item" data-wish="1">
+            <div class="wish-icon-box">
+              <span class="wish-icon">🌾</span>
+            </div>
+            <div class="wish-content">
+              <div class="wish-theme">PROSPERITY &amp; ABUNDANCE</div>
+              <h3 class="wish-title serif">Replenished &amp; Flourishing</h3>
+              <p class="wish-body">"May God replenish your pocket and cause you to prosper in everything you lay your hands on."</p>
+            </div>
+            <div class="wish-reveal-glow"></div>
+          </div>
+
+          <!-- Wish 2 -->
+          <div class="wish-item" data-wish="2">
+            <div class="wish-icon-box">
+              <span class="wish-icon">🕯️</span>
+            </div>
+            <div class="wish-content">
+              <div class="wish-theme">DIVINE WISDOM</div>
+              <h3 class="wish-title serif">Knowledge &amp; Understanding</h3>
+              <p class="wish-body">"May your wisdom, knowledge, and understanding continue to deepen and guide your every step."</p>
+            </div>
+            <div class="wish-reveal-glow"></div>
+          </div>
+
+          <!-- Wish 3 -->
+          <div class="wish-item" data-wish="3">
+            <div class="wish-icon-box">
+              <span class="wish-icon">🕊️</span>
+            </div>
+            <div class="wish-content">
+              <div class="wish-theme">GENUINE LOVE</div>
+              <h3 class="wish-title serif">Safe &amp; Caring Partner</h3>
+              <p class="wish-body">"May you experience the kind of love that feels peaceful, protective, nurturing, and entirely safe."</p>
+            </div>
+            <div class="wish-reveal-glow"></div>
+          </div>
+
+          <!-- Wish 4 -->
+          <div class="wish-item" data-wish="4">
+            <div class="wish-icon-box">
+              <span class="wish-icon">👑</span>
+            </div>
+            <div class="wish-content">
+              <div class="wish-theme">LONG LIFE &amp; HEALTH</div>
+              <h3 class="wish-title serif">Joyful Years &amp; Good Health</h3>
+              <p class="wish-body">"May God grant you long life and good health to enjoy driving your cars and enjoying every single dream you've built."</p>
+            </div>
+            <div class="wish-reveal-glow"></div>
+          </div>
+
+          <!-- Wish 5 -->
+          <div class="wish-item" data-wish="5">
+            <div class="wish-icon-box">
+              <span class="wish-icon">✨</span>
+            </div>
+            <div class="wish-content">
+              <div class="wish-theme">A RADIANT FUTURE</div>
+              <h3 class="wish-title serif">Beyond Imagination</h3>
+              <p class="wish-body">"May life surprise you in the most wonderful ways, and may your dreams find magnificent expression."</p>
+            </div>
+            <div class="wish-reveal-glow"></div>
+          </div>
+        </div>
+
+        <div class="wishes-footer" id="wishesFooter">
+          <p class="wishes-anticipation">And we still have one final, private surprise for you...</p>
+          <button class="luxury-btn gold-glow-btn" id="btnWishesNext">
+            <span>Discover The Final Secret</span>
+            <span class="vault-key-icon">🗝️</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         SCENE 08: THE SECRET VAULT
+         ========================================== -->
+    <section class="scene scene-vault" id="scene-8" data-scene="8" data-title="The Secret Vault">
+      <div class="scene-inner">
+        <div class="vault-editorial-badge">PRIVATE ARCHIVE · SHARON ONLY</div>
+        <h2 class="scene-title serif">The Secret Vault</h2>
+        <p class="scene-subtitle">There's one last treasure we kept locked just for you.</p>
+
+        <!-- Interactive Vault Door Graphic -->
+        <div class="vault-door-container" id="vaultDoorContainer">
+          <div class="vault-outer-rim">
+            <div class="vault-cog c1"></div>
+            <div class="vault-cog c2"></div>
+            <div class="vault-cog c3"></div>
+            <div class="vault-cog c4"></div>
+            
+            <div class="vault-dial" id="vaultDial">
+              <div class="vault-dial-center">
+                <span class="vault-lock-icon" id="vaultLockIcon">🔒</span>
+              </div>
+              <div class="dial-marks">
+                <span>✦</span><span>·</span><span>·</span><span>✦</span><span>·</span><span>·</span><span>✦</span><span>·</span><span>·</span>
+              </div>
+            </div>
+          </div>
+          <div class="vault-status-indicator" id="vaultStatusText">CHAMBER SECURED</div>
+        </div>
+
+        <!-- Vault Entry Form -->
+        <div class="vault-terminal" id="vaultTerminal">
+          <div class="clue-box">
+            <span class="clue-badge">YOUR CLUE</span>
+            <p class="clue-question serif">
+              "What do two stubborn boys call the woman who's always looking out for them?"
+            </p>
+            <p class="clue-subnote">Case-insensitive · Spaces don't matter</p>
+          </div>
+
+          <form class="vault-form" id="vaultForm" onsubmit="return false;">
+            <div class="input-wrapper">
+              <input type="text" id="vaultPasswordInput" class="vault-input" placeholder="Type password here..." autocomplete="off" spellcheck="false" required>
+              <button type="submit" class="vault-submit-btn" id="btnUnlockVault">
+                <span>Unlock</span>
+                <span class="btn-arrow">🔓</span>
+              </button>
+            </div>
+            
+            <!-- Error / Hint Feedback -->
+            <div class="vault-feedback" id="vaultFeedback">
+              <!-- Dynamically populated -->
+            </div>
+
+            <div class="vault-hint-container hidden" id="vaultHintContainer">
+              <p class="hint-text">💡 <strong>Need a hint?</strong> Check Idris's opening line or the nicknames in Daniel's heart! (Hint: You're a superhero without the cape!)</p>
+            </div>
+          </form>
+        </div>
+
+        <!-- Unlocked Vault Content Chamber (Hidden until password solved) -->
+        <div class="vault-chamber-content hidden" id="vaultChamberContent">
+          <div class="chamber-congrats">
+            <div class="unlock-crest">✦ VAULT UNLOCKED ✦</div>
+            <h3 class="serif chamber-title">Welcome to Your Private Sanctuary</h3>
+            <p class="chamber-intro">You cracked the code, Super Mom! Here is the private collection curated with love for you.</p>
+          </div>
+
+          <!-- Section For Pics and Videos (Requested By User!) -->
+          <div class="media-gallery-section" id="mediaGallerySection">
+            <div class="gallery-header">
+              <span class="gallery-pill">PRIVATE MEDIA ARCHIVE</span>
+              <h3 class="gallery-title serif">Sharon's Memories &amp; Moments</h3>
+              <p class="gallery-subtitle">A dedicated visual gallery of photos and videos celebrating your elegance, style, and milestone journey.</p>
+            </div>
+
+            <!-- Interactive Media Grid -->
+            <div class="media-grid" id="mediaGrid">
+              <!-- Photo 0: The CEO / Founder -->
+              <div class="media-card" data-type="image" data-src="public/sharon-ceo.jpeg">
+                <div class="media-thumbnail">
+                  <img src="public/sharon-ceo.jpeg" alt="Sharon — The Visionary CEO" loading="lazy">
+                  <div class="media-type-badge">PHOTO</div>
+                </div>
+                <div class="media-info">
+                  <h4 class="media-caption serif">The Visionary CEO</h4>
+                  <p class="media-date">Building ShazBeauty with Faith</p>
+                </div>
+              </div>
+
+              <!-- Photo 1 -->
+              <div class="media-card" data-type="image" data-src="public/sharon-photo-1.jpeg">
+                <div class="media-thumbnail">
+                  <img src="public/sharon-photo-1.jpeg" alt="The Radiance of Sharon" loading="lazy">
+                  <div class="media-type-badge">PHOTO</div>
+                </div>
+                <div class="media-info">
+                  <h4 class="media-caption serif">The Radiance of Sharon</h4>
+                  <p class="media-date">Grace in Every Season</p>
+                </div>
+              </div>
+
+              <!-- Video 1 -->
+              <div class="media-card video-card" data-type="video">
+                <div class="media-thumbnail video-thumbnail">
+                  <video class="vault-video-element" playsinline preload="metadata">
+                    <source src="public/sharon-video-1.mp4" type="video/mp4">
+                  </video>
+                  <button class="video-play-overlay" aria-label="Play video">
+                    <span class="play-triangle">▶</span>
+                  </button>
+                  <div class="media-type-badge video-badge">VIDEO REEL</div>
+                </div>
+                <div class="media-info">
+                  <h4 class="media-caption serif">Cherished Moments Reel 01</h4>
+                  <p class="media-date">From Idris &amp; Daniel with Love</p>
+                </div>
+              </div>
+
+              <!-- Photo 2 -->
+              <div class="media-card" data-type="image" data-src="public/sharon-photo-2.jpeg">
+                <div class="media-thumbnail">
+                  <img src="public/sharon-photo-2.jpeg" alt="Pure Elegance & Style" loading="lazy">
+                  <div class="media-type-badge">PHOTO</div>
+                </div>
+                <div class="media-info">
+                  <h4 class="media-caption serif">Pure Elegance &amp; Style</h4>
+                  <p class="media-date">Unmatched Sophistication</p>
+                </div>
+              </div>
+
+              <!-- Video 2 -->
+              <div class="media-card video-card" data-type="video">
+                <div class="media-thumbnail video-thumbnail">
+                  <video class="vault-video-element" playsinline preload="metadata">
+                    <source src="public/sharon-video-2.mp4" type="video/mp4">
+                  </video>
+                  <button class="video-play-overlay" aria-label="Play video">
+                    <span class="play-triangle">▶</span>
+                  </button>
+                  <div class="media-type-badge video-badge">VIDEO REEL</div>
+                </div>
+                <div class="media-info">
+                  <h4 class="media-caption serif">Joy &amp; Laughter Reel 02</h4>
+                  <p class="media-date">Unforgettable Memories</p>
+                </div>
+              </div>
+
+              <!-- Photo 3 -->
+              <div class="media-card" data-type="image" data-src="public/sharon-photo-3.jpeg">
+                <div class="media-thumbnail">
+                  <img src="public/sharon-photo-3.jpeg" alt="Super Mom in Her Element" loading="lazy">
+                  <div class="media-type-badge">PHOTO</div>
+                </div>
+                <div class="media-info">
+                  <h4 class="media-caption serif">Super Mom in Her Element</h4>
+                  <p class="media-date">Looking Out for Everyone</p>
+                </div>
+              </div>
+
+              <!-- Video 3 -->
+              <div class="media-card video-card" data-type="video">
+                <div class="media-thumbnail video-thumbnail">
+                  <video class="vault-video-element" playsinline preload="metadata">
+                    <source src="public/sharon-video-3.mp4" type="video/mp4">
+                  </video>
+                  <button class="video-play-overlay" aria-label="Play video">
+                    <span class="play-triangle">▶</span>
+                  </button>
+                  <div class="media-type-badge video-badge">VIDEO REEL</div>
+                </div>
+                <div class="media-info">
+                  <h4 class="media-caption serif">Golden Memories Reel 03</h4>
+                  <p class="media-date">Celebrate Every Milestone</p>
+                </div>
+              </div>
+
+              <!-- Photo 4 -->
+              <div class="media-card" data-type="image" data-src="public/sharon-photo-4.jpeg">
+                <div class="media-thumbnail">
+                  <img src="public/sharon-photo-4.jpeg" alt="Milestone Celebrations" loading="lazy">
+                  <div class="media-type-badge">PHOTO</div>
+                </div>
+                <div class="media-info">
+                  <h4 class="media-caption serif">Milestone Celebrations</h4>
+                  <p class="media-date">Big Wins &amp; Brighter Days</p>
+                </div>
+              </div>
+
+              <!-- Video 4 -->
+              <div class="media-card video-card" data-type="video">
+                <div class="media-thumbnail video-thumbnail">
+                  <video class="vault-video-element" playsinline preload="metadata">
+                    <source src="public/sharon-video-4.mp4" type="video/mp4">
+                  </video>
+                  <button class="video-play-overlay" aria-label="Play video">
+                    <span class="play-triangle">▶</span>
+                  </button>
+                  <div class="media-type-badge video-badge">VIDEO REEL</div>
+                </div>
+                <div class="media-info">
+                  <h4 class="media-caption serif">Special Birthday Reel 04</h4>
+                  <p class="media-date">A Life of Meaning &amp; Joy</p>
+                </div>
+              </div>
+
+              <!-- Photo 5 -->
+              <div class="media-card" data-type="image" data-src="public/sharon-photo-5.jpeg">
+                <div class="media-thumbnail">
+                  <img src="public/sharon-photo-5.jpeg" alt="Grace & Unstoppable Drive" loading="lazy">
+                  <div class="media-type-badge">PHOTO</div>
+                </div>
+                <div class="media-info">
+                  <h4 class="media-caption serif">Grace &amp; Unstoppable Drive</h4>
+                  <p class="media-date">Building Her Signature</p>
+                </div>
+              </div>
+
+              <!-- Video 5 -->
+              <div class="media-card video-card" data-type="video">
+                <div class="media-thumbnail video-thumbnail">
+                  <video class="vault-video-element" playsinline preload="metadata">
+                    <source src="public/sharon-video-5.mp4" type="video/mp4">
+                  </video>
+                  <button class="video-play-overlay" aria-label="Play video">
+                    <span class="play-triangle">▶</span>
+                  </button>
+                  <div class="media-type-badge video-badge">VIDEO REEL</div>
+                </div>
+                <div class="media-info">
+                  <h4 class="media-caption serif">Milestones &amp; Good Vibes 05</h4>
+                  <p class="media-date">Pure Warmth &amp; Energy</p>
+                </div>
+              </div>
+
+              <!-- Photo 6 -->
+              <div class="media-card" data-type="image" data-src="public/sharon-photo-6.jpeg">
+                <div class="media-thumbnail">
+                  <img src="public/sharon-photo-6.jpeg" alt="A Beautiful Smile & Heart" loading="lazy">
+                  <div class="media-type-badge">PHOTO</div>
+                </div>
+                <div class="media-info">
+                  <h4 class="media-caption serif">A Beautiful Smile &amp; Heart</h4>
+                  <p class="media-date">Forever Cherished</p>
+                </div>
+              </div>
+
+              <!-- Video 6 -->
+              <div class="media-card video-card" data-type="video">
+                <div class="media-thumbnail video-thumbnail">
+                  <video class="vault-video-element" playsinline preload="metadata">
+                    <source src="public/sharon-video-6.mp4" type="video/mp4">
+                  </video>
+                  <button class="video-play-overlay" aria-label="Play video">
+                    <span class="play-triangle">▶</span>
+                  </button>
+                  <div class="media-type-badge video-badge">VIDEO REEL</div>
+                </div>
+                <div class="media-info">
+                  <h4 class="media-caption serif">Forever Cherished Reel 06</h4>
+                  <p class="media-date">Celebrating Sharon Today &amp; Always</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Exclusive Final Secret Note -->
+            <div class="exclusive-secret-note">
+              <span class="wax-stamp-small">CONFIDENTIAL</span>
+              <h4 class="secret-note-title serif">A Personal Note From Both Of Us</h4>
+              <p class="secret-note-body">
+                "Sharon, we wanted to create something timeless for you because ordinary cards get lost and generic text messages disappear. You are a cornerstone in both our lives—someone who inspires us to do better, be wiser, and always laugh through life's chaos. Whenever you look back at this, remember that you are deeply cherished, respected, and backed by two loyal brothers forever."
+              </p>
+              <div class="secret-signatures">
+                <span>— Idris</span> &amp; <span>— Daniel</span>
+              </div>
+            </div>
+
+            <div class="action-row text-center mt-xl">
+              <button class="luxury-btn gold-glow-btn" id="btnVaultToFinale">
+                <span>Enter The Grand Finale</span>
+                <span class="arrow-icon">✨</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         SCENE 09: THE GRAND FINALE
+         ========================================== -->
+    <section class="scene scene-finale" id="scene-9" data-scene="9" data-title="The Grand Finale">
+      <div class="scene-inner text-center">
+        <div class="finale-crest">
+          <span>👑</span>
+        </div>
+
+        <div class="editorial-badge">THE GRAND CELEBRATION</div>
+        <h1 class="grand-birthday-title serif">Happy Birthday, Sharon.</h1>
+        <p class="finale-subphrase serif">
+          Keep becoming. Keep building. Keep shining.
+        </p>
+
+        <div class="gold-accent-line"></div>
+
+        <div class="finale-card">
+          <p class="finale-message serif">
+            "The world is yet to see the full extent of what you carry. May this new chapter bring you beautiful moments, bigger wins, and everything your heart has been praying for."
+          </p>
+          <div class="signature-line">
+            <span>With love, Idris &amp; Daniel ❤️</span>
+          </div>
+        </div>
+
+        <!-- Grand Celebration Actions -->
+        <div class="finale-actions">
+          <button class="luxury-btn gold-glow-btn" id="btnTriggerConfetti">
+            <span>Celebrate with More Confetti! 🎉</span>
+          </button>
+
+          <button class="luxury-btn outline-btn" id="btnReadLettersAgain">
+            <span>Read Our Letters Again 📜</span>
+          </button>
+
+          <button class="luxury-btn outline-btn" id="btnReliveJourney">
+            <span>Relive The Magic From The Start ✨</span>
+          </button>
+        </div>
+
+        <div class="finale-dedication">
+          <span class="dedication-dot">✦</span>
+          <span>Made especially for Sharon with love &amp; admiration</span>
+          <span class="dedication-dot">✦</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==========================================
+       LETTER MODAL (LUXURY EDITORIAL READER)
+       ========================================== -->
+  <div class="modal-backdrop hidden" id="letterModal">
+    <div class="letter-modal-container">
+      <button class="modal-close-btn" id="closeLetterModalBtn" aria-label="Close letter">
+        ✕
+      </button>
+
+      <div class="parchment-sheet">
+        <div class="parchment-watermark">FOR SHARON</div>
+        
+        <div class="letter-meta-header">
+          <div class="stamp-seal" id="modalStampSeal">IDRIS &amp; DANIEL</div>
+          <div class="letter-header-details">
+            <span class="letter-date" id="modalLetterDate">November 2026</span>
+            <h2 class="modal-letter-title serif" id="modalLetterTitle">Letter Title</h2>
+            <span class="modal-letter-author" id="modalLetterAuthor">From Author</span>
+          </div>
+        </div>
+
+        <div class="letter-body-content" id="modalLetterContent">
+          <!-- Populated dynamically to preserve every exact word -->
+        </div>
+
+        <div class="letter-paper-footer">
+          <div class="wax-seal-print">✦ WITH ALL OUR HEARTS ✦</div>
+          <button class="finish-reading-btn" id="finishReadingBtn">Done Reading</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================
+       LIGHTBOX MODAL FOR FULLSCREEN PHOTOS/VIDEOS
+       ========================================== -->
+  <div class="lightbox-modal hidden" id="lightboxModal">
+    <button class="lightbox-close-btn" id="closeLightboxBtn" aria-label="Close Lightbox">✕</button>
+    <div class="lightbox-content" id="lightboxContent">
+      <img id="lightboxImage" src="" alt="Sharon Memory Fullscreen" class="hidden">
+      <video id="lightboxVideo" controls class="hidden"></video>
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+  </div>
+
+
+  <!-- Script file -->
+  <script src="script.js"></script>
+</body>
+</html>
